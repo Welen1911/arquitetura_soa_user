@@ -41,11 +41,7 @@ class ClienteController extends Controller
     {
         $cliente = Cliente::find($id);
 
-        $response = Http::get('http://127.0.0.1:3000/api/endereco/'.$id);
-
-        $enderecos =$response->object();
-
-        return response(['cliente' => $cliente, 'enderecos' => $enderecos], 200);
+        return response(['cliente' => $cliente], 200);
 
     }
 
